@@ -17,11 +17,12 @@ int main()
 	{
 		tempdd+=days[i];       //cколко дней прошло от начала года рождени€ до начала мес€ца рождени€
 	}
-	seconds = time(NULL);
 
+	seconds = time(NULL);
 	printf("Local time: %s", asctime(timeinfo));
 
-	vis = (timeinfo->tm_year+1900-yyyy)/4;
+	vis = timeinfo->tm_year+1900-yyyy;
+	vis/=4;
 	if(timeinfo->tm_year%4 == 0 && timeinfo->tm_mon>=2 && yyyy%4==0 && mm<3)
 		vis++;
 	else if(timeinfo->tm_year%4 == 0 && timeinfo->tm_mon<2 && yyyy%4==0 && mm>=3)
