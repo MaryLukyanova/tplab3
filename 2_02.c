@@ -15,7 +15,7 @@ int main()
 
 	for(i=0; i<mm-1; i++)
 	{
-		tempdd+=days[i];
+		tempdd+=days[i];       //cколко дней прошло от начала года рождени€ до начала мес€ца рождени€
 	}
 	seconds = time(NULL);
 
@@ -30,11 +30,11 @@ int main()
 
 
 	allsec = (timeinfo->tm_year+1900-yyyy)*365*(24*60*60)
-+ timeinfo->tm_yday*(24*60*60) 
-+ timeinfo->tm_hour*60*60 
-+ timeinfo->tm_min*60 + timeinfo->tm_sec
-- tempdd*24*60*60 - (dd-1)*24*60*60 - hh*60*60 
-- mmin*60 + vis*24*60*60;
+				+ timeinfo->tm_yday*(24*60*60) 
+				+ timeinfo->tm_hour*60*60 
+				+ timeinfo->tm_min*60 + timeinfo->tm_sec
+				- tempdd*24*60*60 - (dd-1)*24*60*60 - hh*60*60 
+				- mmin*60 + vis*24*60*60;
 
 	printf("ALL SECONDS: %d", allsec);
 
